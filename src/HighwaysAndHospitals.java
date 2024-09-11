@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /**
  * Highways & Hospitals
  * A puzzle created by Zach Blick
@@ -15,12 +17,39 @@ public class HighwaysAndHospitals {
      *  hospital access for all citizens in Menlo County.
      */
     public static long cost(int n, int hospitalCost, int highwayCost, int cities[][]) {
+        System.out.println(cities[0][0]);
+        System.out.println(cities[0][1]);
 
+        long totalCost = 0;
 
         // Easy check for if hospitals are cheaper than highways, build at hospital in each city
         if (hospitalCost <= highwayCost){
             return ((long) hospitalCost * n);
         }
+
+        // make an arraylist of arraylists
+        ArrayList<ArrayList<Integer>> clusters = new ArrayList<ArrayList<Integer>>();
+
+        // need to find number of clusters.
+        for(int i = 0; i < cities.length; i++){
+            for(int j = 0; j < cities[0].length; j++){
+                //if (cities[i][j] )
+
+
+
+            }
+        }
+
+        for (int i = 0; i < clusters.size(); i++){
+            //totalCost += ((long) hospitalCost + (highwayCost * clusters.get(i).size - 1))
+        }
+        // for each cluster,
+            //totalCost += (long) (hospital cost + (highways cost * [numCitiesInCluster - 1]
+
+
+
+
+
 
         // Thinking about other case(s?)
         // what if hospitals and highways cost the same? does that even matter?
