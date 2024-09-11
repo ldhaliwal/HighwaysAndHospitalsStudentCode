@@ -44,9 +44,6 @@ public class HighwaysAndHospitals {
         // not sure what the algorithm is supposed to look like at all
 
 
-
-
-
         return 0;
     }
 }
