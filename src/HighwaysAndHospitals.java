@@ -33,21 +33,17 @@ public class HighwaysAndHospitals {
         // need to find number of clusters.
         for(int i = 0; i < cities.length; i++){
             for(int j = 0; j < cities[0].length; j++){
-                //if (cities[i][j] )
-
-
-
+                if (!clusters.get(j).contains(cities[i][j])){
+                    //create new subcluster and add cities[i][j]
+                }
             }
         }
 
         for (int i = 0; i < clusters.size(); i++){
-            //totalCost += ((long) hospitalCost + (highwayCost * clusters.get(i).size - 1))
+            totalCost += ((long) hospitalCost + (highwayCost * clusters.get(i).size - 1));
         }
         // for each cluster,
             //totalCost += (long) (hospital cost + (highways cost * [numCitiesInCluster - 1]
-
-
-
 
 
 
