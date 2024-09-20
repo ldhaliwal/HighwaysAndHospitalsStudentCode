@@ -1,4 +1,4 @@
-Name: YOUR NAME HERE
+Name: Liliana Dhaliwal
 
 | Date         |     Time      |                                                                                                                                                                                                                                                                            Update |
 |:-------------|:-------------:|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
@@ -6,6 +6,9 @@ Name: YOUR NAME HERE
 | September 10 |  10-10:30pm   |                          Wrote out pseudocode ideas, but mostly ideas in english of how to approach the problem. right now the best thing i can come up with is going through each possible combination of hospitals & highways, but I know that cannot be the most efficient way |
 | September 11 | 10:40-11:30am | Talked with people and determined we really need to find out how many clusters there are, and then can calculate cost. worked on pseudocode, then turing that into real code. It really looks like there should be a more efficient way to do that that involves fewer for loops. |
 | September 12 |   9-9:30pm    |                                       Mainly worked to try and fix errors that kept popping up, really did my best to make this approach work but I just know this isn't the right way to do it. I know theres no way that  using the nested arraylists is the best way to do it. |
+| September 17 |   8-8:30pm    |                                                            Worked thorough writing real code that works, made a recursive method to find the root of a given node, which I'm not sure if that negatively impacts run time but it made things easier in writing the code at least. |
+| September 18 |  1:15-1:45pm  |                                                              Trying to implement speedups, I think I get how they work but I'm confused on where to implement them. Later update turns out I already implemented path compression in my code!! now trying to do weight balancing. |
+| September 19 |  6:40-7:10pm  |                                               Tried some more to implement weight balancing, but couldn't figure it out. main issue was trying to find the order, but every way I tried to do it was super inefficient and I think it would have made the runtime worse actually. |
 
 
 To add a new row to the table, click into a cell and then hit shift-enter.

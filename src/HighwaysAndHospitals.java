@@ -12,31 +12,28 @@ import java.util.ArrayList;
  */
 
 public class HighwaysAndHospitals {
-
-    /**
-     * TODO: Complete this function, cost(), to return the minimum cost to provide
-     *  hospital access for all citizens in Menlo County.
-     */
-
-    public static long cost(int n, int hospitalCost, int highwayCost, int cities[][]) {
-        // Make a map (array) of size n +1 to store all root/node connections (starting at index 1, not 0 for clarity)
+    public static long cost(int n, int hospitalCost, int highwayCost, int[][] cities) {
+        // Makes a map store all root/node connections (starting at index 1, not 0 for clarity)
         int[] root = new int[n + 1];
 
-        // Easy check for if hospitals are cheaper than highways, build at hospital in each city
+        // Checks if hospitals are cheaper than highways, and if so, builds a hospital in each city
         if (hospitalCost <= highwayCost){
             return ((long) hospitalCost * n);
         }
 
-        // for each pair of nodes:
-        for (int i = 0; i< cities.length; i++){
-            int parentRoot = findRoot(cities[i][0], root);
-            int childRoot = findRoot(cities[i][1], root);
+        // Performs union-find algorithm to store root/node connections
+        for (int[] city : cities) {
+            // Finds the root of the parent and child nodes
+            int parentRoot = findRoot(city[0], root);
+            int childRoot = findRoot(city[1], root);
 
-            if (childRoot != parentRoot){
+            // If the roots are not the same, set the parent's root to be the child's root
+            if (childRoot != parentRoot) {
                 root[childRoot] = parentRoot;
             }
         }
 
+        // Finds the number of empty roots to count the number of clusters
         int numClusters = 0;
         for (int i = 0; i< root.length; i++){
             if(root[i] == 0 && i !=0 ){
@@ -44,15 +41,19 @@ public class HighwaysAndHospitals {
             }
         }
 
+        // Calculates and returns the final cost
         return (((long) numClusters * hospitalCost) + ((long) (n - numClusters) *highwayCost));
-
     }
 
+    // Finds the roots of the node that is passed in
     public static int findRoot(int i, int[] root){
+        // Base case
         if (root[i] == 0) {
             return i;
         }
-        root[i] = findRoot(root[i], root); // Path compression
+
+        // Recursive call
+        root[i] = findRoot(root[i], root);
         return root[i];
     }
 }
